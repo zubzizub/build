@@ -10,7 +10,6 @@ if ($do=='changephotofirm') {
 
         $errors = false;
 
-
         cmsCore::loadClass('upload_photo');
         $inUploadPhoto = cmsUploadPhoto::getInstance();
         // Выставляем конфигурационные параметры
@@ -53,8 +52,6 @@ if ($do=='changephotofirm') {
         cmsCore::redirect("/users/".$usr['login']);
    }
 
-
-
     if (!cmsCore::isAjax()){ cmsCore::error404(); }
 
     cmsPage::initTemplate('components', 'com_users_changephotofirm')->
@@ -62,4 +59,3 @@ if ($do=='changephotofirm') {
     display('com_users_changephotofirm.php');
 
 }
-
