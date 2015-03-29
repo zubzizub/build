@@ -1,0 +1,24 @@
+<project name="Phing" default="copy">
+<property name="src" value="testPhing" />
+
+
+    <target name="prepare">
+        <echo msg="Making directory - app" />
+        <mkdir dir="./${src}/app" />
+    </target>
+
+	<target name="createDir" depends="prepare">
+        <echo msg="Making directory - app" />
+        <mkdir dir="./${src}/app/css" />
+        <mkdir dir="./${src}/app/js" />
+    </target>
+
+
+    <target name="copy" depends="createDir">
+        <copy file="../.bowerrc" tofile="./${src}/.bowerrc" />
+        <copy file="../package.json" tofile="./${src}/package.json" />
+        <copy file="../bower.json" tofile="./${src}/bower.json" />
+        <touch file="./${src}/test.txt" />
+    </target>
+
+</project>
