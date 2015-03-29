@@ -1,4 +1,4 @@
-<project name="Phing" default="copy">
+<project name="Phing" default="copy" basedir="..">
 <property name="src" value="testPhing" />
 
 
